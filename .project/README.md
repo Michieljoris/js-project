@@ -5,23 +5,23 @@ project
 
 Install:
 
-    npm install project
+    npm install projectname
 	
 Add dependency to your project with
 
-    "project": "git@github.com/Michieljoris/project"
+    "projectname": "git@github.com/Michieljoris/projectname"
 	
 or
 
-	"project": "*"
+	"projectname": "*"
 
 Require in a module:
 
-    var project = require('project');
+    var projectname = require('projectname');
 
 Use:
 
-See [documentation](https://rawgithub.com/Michieljoris/project/master/docs/project.html).
+See [documentation](https://rawgithub.com/Michieljoris/projectname/master/docs/projectname.html).
 
 
 

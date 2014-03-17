@@ -1,7 +1,7 @@
-scaffold
+js-scaffold
 ========
 
-Seed/scaffold/skeleton for a new website using html-builder and bb-server
+Seed/scaffold/skeleton for a new javascript or node project using html-builder and bb-server
 
 Clone repo.
 
@@ -33,6 +33,12 @@ or
 	node bower.js
 	
 to update package.json and bower.json respectively.
+
+Execute 
+
+    bin/docs
+	
+to create docco for the javascript file with the projects name in the docs directory.
 
 Make sure to start scripts in ./bin from the site's directory.	
 
