@@ -1,30 +1,41 @@
-project
---------
+scaffold
+========
 
-[Description]
+Seed/scaffold/skeleton for a new website using html-builder and bb-server
 
-Install:
+Clone repo.
 
-    npm install project
+Make sure node, npm and bower are installed.
+
+eg: node install -g bower
+
+Edit package.js and bower.js and enter required packages under dependencies.
+
+Edit build/recipe.js to set asset requests and their paths.
+
+To develop site:
+
+	mv ./scaffold ./your-new-project-name
+    cd ./your-new-project-name
+    ./init 
+	./bin/develop
 	
-Add dependency to your project with
+To serve only:
 
-    "project": "git@github.com/Michieljoris/project"
+	bin/serve-forever
+
+Edit package.js and bower.js then
+
+    node package.js
 	
 or
+    
+	node bower.js
+	
+to update package.json and bower.json respectively.
 
-	"project": "*"
+Make sure to start scripts in ./bin from the site's directory.	
 
-Require in a module:
-
-    var project = require('project');
-
-Use:
-
-See [documentation](https://rawgithub.com/Michieljoris/project/master/docs/project.html).
-
-
-
-
-
-
+The init script is made non-executable to prevent mishaps, since it removes your
+.git directory and starts a new repo.
+	
