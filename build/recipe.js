@@ -169,7 +169,7 @@ var exports = {
                     
                     // ,'router'
                     // ,'angular.js'
-                    ,'test.coffee'
+                    // ,'test.coffee'
                     
                 ],
                 path: 'scripts/'

@@ -34,6 +34,7 @@ module.exports = {
     // [npm](http://npmjs.org) enforces the X.Y.Z semantic version 
     // scheme that is described at [http://semver.org/](http://semver.org/)
     // and we should follow this versioning for our package.
+    //Comment out go auto increase version on execution of this file
     "version": "0.1.0",
     // URL to the homepage for this package.
     "homepage": "https://github.com/michieljoris/projectname",
