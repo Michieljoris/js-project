@@ -75,7 +75,7 @@ module.exports = {
     // If there is a file that should be loaded when require()ing this 
     // folder-as-a-package, declare this file here, relative to our package 
     // structure.
-    // "main": "lib/shift-calendar.js",
+    // "main": "lib/projectname.js",
     
     // What other modules/libraries do we require for our own module?
     // The beauty of this dependencies block is that these modules will
