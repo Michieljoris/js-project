@@ -6,3 +6,6 @@ images/*
 !node_modules/node-static
 npm-debug.log 
 bower_components
+build
+server
+www
