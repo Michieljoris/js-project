@@ -1,4 +1,4 @@
-js-scaffold
+js-project
 ========
 
 ##Work in progress...
@@ -35,9 +35,9 @@ Features:
 
 
 For info on how configure html-builder see
-[builder/recipe.js](https://rawgithub.com/Michieljoris/html-builder/master/docs/html-builder.html).
+[builder/recipe.js](https://rawgithub.com/Michieljoris/html-builder/master/docs/example-recipe.html).
 
-For info on how configure bb-server see [server/server.js](https://rawgithub.com/Michieljoris/bb-server/master/docs/bb-server.html).
+For info on how configure bb-server see [server/server.js](https://rawgithub.com/Michieljoris/bb-server/master/docs/example-server.html).
 
 Clone or copy repo.
 
