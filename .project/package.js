@@ -35,7 +35,7 @@ module.exports = {
     // scheme that is described at [http://semver.org/](http://semver.org/)
     // and we should follow this versioning for our package.
     //Comment out go auto increase version on execution of this file
-    "version": "0.1.0",
+    // "version": "0.1.0",
     // URL to the homepage for this package.
     "homepage": "https://github.com/michieljoris/projectname",
     // An array of keywords used to describe this package to search engines,
@@ -75,6 +75,17 @@ module.exports = {
     // [npm semantic version parser](https://npmjs.org/doc/semver.html), 
     // and the below version means what it looks like: 
     //
+    
+    //Installs a binary script called projectname which is linked to
+    //./bin/projectname in the local package.
+
+    //If we have installed this package globally using npm install projectname
+    //-g we will be able to call this new command projectname from anywhere on
+    //our system.
+    "bin": {
+	// "commit": "bin/projectname.js"
+    },
+    
     // require a Node.js installation that is greater than or equal to version 0.6.0
     "engines": {
         "node": ">= 0.6.x"
