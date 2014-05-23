@@ -78,6 +78,31 @@ Run them in separate terminals and monitor both. See configuration for both
 bb-server and html-builder on how to enable a socket connection between these
 two and the browser for auto refresh on any changes to the hmlt/js/css.	
 	
+If you're working on the bb-server and/or the html-builder use:
+
+    bin/serve-nodemon #or
+	bin/build-nodemon
+	
+This will restart the relevant node process when the code changes.
+
+    bin/clearCache #clears bb-server's cache
+	
+Use rsync (edit it first) to deploy to a server
+
+	bin/linode-sync
+	
+After a rsync, execute clearCache and build on the server to effect changes to
+the site.
+
+I might change this to a git-deploy at one point with post receive hooks to
+update and rebuild the site, but for now:
+	
+On deployment server run:
+
+    bin/serve-forever
+	
+--------------------------	
+	
 If you don't need a server and/or a build tool remove the build, certs, server and
 www directories according to your needs.
 
