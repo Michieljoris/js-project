@@ -1,1 +1,3 @@
-nodemon server/server.js
+#!/bin/sh
+nodemon server/server.js    
+    

@@ -64,13 +64,19 @@ Edit build/recipe.js to set asset requests and their paths.
 
 Edit server/server.js to configure the node server.
 
-To serve only:
+Set bin/URL to the address:port the app gets served from.
 
-	bin/serve-forever
+To serve:
+
+	bin/serve	
 	
-To develop:
+To build:
 
-    bin/develop
+    bin/build
+	
+Run them in separate terminals and monitor both. See configuration for both
+bb-server and html-builder on how to enable a socket connection between these
+two and the browser for auto refresh on any changes to the hmlt/js/css.	
 	
 If you don't need a server and/or a build tool remove the build, certs, server and
 www directories according to your needs.
