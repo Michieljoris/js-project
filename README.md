@@ -50,7 +50,7 @@ Make sure node, npm and bower are installed.
 
 eg: node install -g bower
 
-Edit package.js and bower.js and enter required packages under dependencies.
+Edit .project/package.js and .project/bower.js and enter required packages under dependencies.
 
 Run
     
@@ -103,10 +103,8 @@ On deployment server run:
 	
 --------------------------	
 	
-If you don't need a server and/or a build tool remove the build, certs, server and
-www directories according to your needs.
 
-Edit package.js and bower.js then
+Edit .project/package.js 
 
     node package.js
 	
@@ -124,6 +122,4 @@ to create docco for the javascript file with the projects name in the docs direc
 
 Make sure to start scripts in ./bin from the site's directory.	
 
-The init script is made non-executable to prevent mishaps, since it removes your
-.git directory and starts a new repo.
 	

@@ -1,7 +1,9 @@
 #!/bin/sh
 
 PROJECT_NAME=`basename $PWD`
-echo $PROJECT_NAME
+echo "Creating new project named: $PROJECT_NAME"
+
+echo "\nPlease edit dependencies in .project/package.js and .project/bower.js before continuing.\n"
 
 
 echo "Enter w for web project, n for node project:"
