@@ -1,46 +1,77 @@
 #!/bin/sh
 
-echo "Enter y to add directories for the builder and server:"
+PROJECT_NAME=`basename $PWD`
+echo $PROJECT_NAME
+
+
+echo "Enter w for web project, n for node project:"
 
 read LINE
 
-if [ $LINE = "y" ] 
+echo "Installing npm module fs-extra.."
+npm install fs-extra
+
+if [ $LINE = "w" ] 
 then 
-    echo "Copying directories.."
+    echo "Copying www and build directories.."
     cp -r ./.project/server ./.project/build ./.project/www ./
-    cp ./.project/.gitignore ./
+    echo "Copying .gitignore"
+    cp ./.project/web/.gitignore ./
+    echoe "Copying bower.js and package.js"
+    cp ./.project/web/package.js ./
+    cp ./.project/bower.js ./
+    echo "Inserting project name in appropriate places in bower.js."
+    sed -i "s/projectname/$PROJECT_NAME/g" ./bower.js
+    echo "Creating bower.json.."
+    node bower.js
+    echo "Installing bower packages.."
+    bower install
+    echo "Adding $PROJECT_NAME.org"
+    cp ./.project/web/project.org $PROJECT_NAME.org
+    echo "Adding bin dir"
+    cp -r .project/bin ./
 else
-    echo "Not copying directories."
+    echo "Copying .gitignore"
+    cp ./.project/.gitignore ./
+    echo "Copying package.js"
+    cp ./.project/package.js ./
+    echo "Adding $PROJECT_NAME.org"
+    cp ./.project/project.org $PROJECT_NAME.org
+    rm -rf bin
+    rm  js-project.org
+    echo "Adding bin dir"
+    mkdir bin
+    cp .project/bin/docs ./bin
 fi 
 
 
-PROJECT_NAME=`basename $PWD`
-echo $PROJECT_NAME
-echo "Creating package.js and bower.js.."
-cp ./.project/package.js ./
-sed -i "s/projectname/$PROJECT_NAME/g" ./package.js
-cp ./.project/bower.js ./
-sed -i "s/projectname/$PROJECT_NAME/g" ./bower.js
-cp ./.project/README.md ./
 echo "Adding README.md.."
+cp ./.project/README.md ./
+
+echo "Inserting project name in appropriate places in package.js and README.md."
+sed -i "s/projectname/$PROJECT_NAME/g" ./package.js
 sed -i "s/projectname/$PROJECT_NAME/g" ./README.md
-echo "Removing bower_components and node_modules directories.."
-rm -rf bower_components
-rm -rf node_modules
-echo "Installing npm module fs-extra.."
-npm install fs-extra
-echo "Creating package.json and bower.json.."
+
+echo "Creating package.json.."
 node package.js
-node bower.js
-echo "Installing packages.."
+echo "Installing npm packages.."
 npm install
-bower install
 
-chmod uga-x ./init
-echo "//Empty source file" > src/$PROJECT_NAME.js
-bin/docs
+if [ $LINE = "n" ] 
+then 
+    echo "//Empty source file" > src/$PROJECT_NAME.js
+    bin/docs
+fi
 
-echoe "Removin git repo and creating new.."
+
+echo "Removing .project directory"
+rm -rf .project
+
+echo "Removing init file"
+# chmod uga-x ./init
+rm -f init
+
+echo "Removing git repo and creating new.."
 rm -rf .git
 
 git init
@@ -48,5 +79,6 @@ git add -A
 git commit -m 'first commit'
 echo "Remote added for michieljoris git user.."
 git remote add origin "git@github.com:Michieljoris/$PROJECT_NAME"
+
 echo "Done."
 

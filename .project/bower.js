@@ -88,13 +88,13 @@ module.exports = {
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
         //node
-        "angular": "~1.2.14",
-        "angular-ui": "~0.4.0",
+        // "angular": "~1.2.14",
+        // "angular-ui": "~0.4.0",
         "modernizr": "~2.7.2",
         //amd
-        "bootstrap": "~3.1.1",
-        "foundation": "~5.2.0",
-        "jquery-ui": "~1.10.4",
+        // "bootstrap": "~3.1.1",
+        // "foundation": "~5.2.0",
+        // "jquery-ui": "~1.10.4",
         "normalize.css": "~3.0.0"
         
     },

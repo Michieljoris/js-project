@@ -30,7 +30,7 @@ module.exports = {
     // We know it is JavaScript for Node.
     "name": "projectname",
     // A single line, or sometimes slightly longer, description of our package.
-    "description": "",
+    "description": "Clone this project to scaffold a new (npm/node) project.",
     // [npm](http://npmjs.org) enforces the X.Y.Z semantic version 
     // scheme that is described at [http://semver.org/](http://semver.org/)
     // and we should follow this versioning for our package.
@@ -100,9 +100,16 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
-        // "dougs_vow": "*",
+        // "bb-server": "0.4.x",
+        // "html-builder": "0.1.x",
+        "bb-server": "git://github.com/michieljoris/bb-server.git",
+        "html-builder": "git://github.com/michieljoris/html-builder.git",
         "fs-extra": "0.8.x"
         
+	// "nodemailer": "*",
+	// "dbox": "*",
+        // "nodemailer": "0.5.x",
+        // "dbox": "0.6.x",
         // "colors": "*",
     },
     // What dependencies are useful only for developers?
