@@ -26,8 +26,15 @@ var exports = {
         ,partials: 'build/'  //can be overridden per template
         ,www: 'www'
         ,out:'built' 
-        ,js: 'js'
+        ,js: 'scripts'
     }
+    ,reload: {
+        // enable: develop_mode,
+        enable: develop_mode,
+        msg: "reload"
+        //url is in the file bin/URL
+    }
+    
     /*
       If cachify if falsy resources will be requested as is, without a
       stamp. Which means bb-server will send them with max-age=0 and
@@ -108,7 +115,7 @@ var exports = {
     //to generate a string to save to the file defined in 'out'.
     ,partials: {
         ids: {
-            title: '<title>Scaffold</title>'
+            title: '<title>Cape</title>'
             ,skewer: develop_mode ? '<script src="http://localhost:9090/skewer"></script>' : ' '
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
             // ,fragment: '<meta name="fragment" content="!">'
@@ -144,6 +151,15 @@ var exports = {
             ]
             ,path: 'css/'
         }
+        
+        //order these scriptBlocks in the order that they would be loaded by the
+        //browser, because any duplicate entries (as added by modules for
+        //instance) will be removed apart from the first. Usually you would have
+        //only one block, possibly two if you need to load modules in the head
+        //of the html document, but you can have as many as you like.  Some
+        //components (like slideshow or the router for angular) need to load
+        //their own css and js files, these would be added to the last block, or
+        //te first block that has the extra:true attribute
         ,scriptBlock: [
             {
                 id: 'headJsBlock',
@@ -172,6 +188,31 @@ var exports = {
                     // ,'router'
                     // ,'angular.js'
                     // ,'test.coffee'
+                    
+                    //The following will be substitud with the list of required
+                    //modules, in the proper order, also the module enabler
+                    //script will be added before the first module in every
+                    //block. When this block is concatenated all module files
+                    //will be denodify.wrapped. If there are scripts in a
+                    //language other than javascript in the block, the files
+                    //will still be concatenated, but not
+                    //denodify.wrapped. Instead the resulting concatenated file
+                    //will have an extension of .bundle and a first line of what
+                    //is contained within the bundle. Bb-server can then extract
+                    //this line, split up the bundle, recast the parts to js,
+                    //denodify.wrap the module scripts, bundle it up again,
+                    //cache and send it (as a proper js file).
+
+                    // The giveaway is the path 'modules/[dir1/dir2/]', all
+                    //required and main modules need to be in this
+                    //directory. The main script needs to be in here so
+                    //html-builder knows to add the required script tags here,
+                    //and bb-server needs to know a requested script is a module
+                    //because it needs to denodify.wrap it.
+                    // ,'modules/mymodule.nm.js'
+                    
+                    ,['modules/mymodule.js']
+                    ,'cape.js'
                     
                 ],
                 path: 'scripts/'
