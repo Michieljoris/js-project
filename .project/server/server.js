@@ -1,17 +1,17 @@
 /*global __dirname:false require:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
-var server = require('bb-server'),
+var server = require('bb-server');
 
-    sendMail = require("./firstDoorSendMail.js")
+    // sendMail = require("./firstDoorSendMail.js")
     // ,testSendMail = require("./testSendMail.js")
     // ,sync = require("./sync.js")
     // ,dropbox_authorize = require("./dropbox_authorize.js")
     // ,dropbox_connect = require("./dropbox_connect.js")
-    ,editor_save = require('./editor_save.js')
+    // ,editor_save = require('./editor_save.js')
     // testMail = require("./testSendMail"),
     // testGet = require("./testGet")
-;
+// ;
 
  
 var develop_mode = process.env.DEVELOP; 
@@ -45,10 +45,10 @@ var options = {
     //with a cache control setting of maxAge (in [m]inutes, [h]ours,
     //[d]ays, [w]eeks or [y]ears). Defaults to the favicon.ico bundled
     //with the server with a max age of 1 hour.
-    ,favicon: {
-        path:  './www/favicon.ico',
-        maxAge: '1h' 
-    }
+    // ,favicon: {
+    //     path:  './www/favicon.ico',
+    //     maxAge: '1h' 
+    // }
     
     // see lib/logger.js for more info. Basically logging all requests to a file.
     // ,log: true
@@ -157,8 +157,8 @@ var options = {
     
     //If method and path match the functin will be called with [req, res].
     ,postHandlers: {
-        "/__api/save" : editor_save,
-        "/contactus_form" : sendMail
+        // "/__api/save" : editor_save,
+        // "/contactus_form" : sendMail
         // ,"/contactus_form" : testSendMail
         }
     ,getHandlers: {
