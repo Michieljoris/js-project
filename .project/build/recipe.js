@@ -138,8 +138,8 @@ var exports = {
         ,linkBlock:  {
             id: 'linkBlock',
             files:  [
-                // 'bower/normalize.css/normalize.css'
-                // ,'bower/bootstrap/dist/css/bootstrap.css'
+                'bower/normalize.css/normalize.css'
+                ,'bower/bootstrap/dist/css/bootstrap.css'
                 // ,'bower/foundation/css/foundation.css'
                 // ,'bower/jquery-ui/jquery-ui.custom.css'
                 // ,'bower/angular-ui/build/angular-ui.css'
@@ -192,10 +192,13 @@ var exports = {
                     // ,'router'
                     // ,'angular.js'
                     // ,'test.coffee'
-                    "bower/jquery/dist/jquery.js"
+                    // "bower/jquery/dist/jquery.js"
                     // "vendor/jquery-1.6.2.js"
-                    ,"bower/modernizr/modernizr.js"
-                    ,"bower/logthis/logthis.js"
+                    // ,'bower/bootstrap/dist/js/bootstrap.js'
+                    // ,"bower/modernizr/modernizr.js"
+                    // ,"bower/bacon/dist/Bacon.min.js"
+                    // ,"bower/mori/mori.js"
+                    // ,"bower/logthis/logthis.js"
                     // ,"bower/ractive/ractive.js"
                     // ,"bower/vue/dist/vue.js"
                     //The following will be substitud with the list of required

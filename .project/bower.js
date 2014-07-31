@@ -99,6 +99,10 @@ module.exports = {
         // "arbor": "*",
         "jquery": "*"
         
+        // ,"bacon": "*"
+        // ,"mori": "*"
+        // ,"bootstrap":"*"
+       
         
     },
     // What dependencies are useful only for developers?

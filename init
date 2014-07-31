@@ -40,12 +40,12 @@ else
     echo "Adding $PROJECT_NAME.org"
     cp ./.project/project.org $PROJECT_NAME.org
     rm -rf bin
-    rm  js-project.org
     echo "Adding bin dir"
     mkdir bin
     cp .project/bin/docs ./bin
 fi 
 
+rm  js-project.org
 
 echo "Adding README.md.."
 cp ./.project/README.md ./
@@ -61,6 +61,7 @@ npm install
 
 if [ $LINE = "n" ] 
 then 
+    mkdir src
     echo "//Empty source file" > src/$PROJECT_NAME.js
     bin/docs
 fi
