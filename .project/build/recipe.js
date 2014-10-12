@@ -223,7 +223,7 @@ var exports = {
                     //because it needs to denodify.wrap it.
                     // ,'modules/mymodule.nm.js'
                     
-                    ,['main.js']
+                    ['main.js']
                     ,"start.js"
                     // ,'cape.js'
                     
